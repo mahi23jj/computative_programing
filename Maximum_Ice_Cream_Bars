@@ -1,0 +1,17 @@
+class Solution:
+    def maxIceCream(self, costs: List[int], coins: int) -> int:
+        # for i in range(len(costs)):
+        #     for j in range(len(costs)-1-i):
+        #         if costs[j]>costs[j+1]:
+        #             temp=costs[j]
+        #             costs[j]=costs[j+1]
+        #             costs[j+1]=temp
+        costs.sort()
+        val=coins
+        k=0
+        for i in range(len(costs)):
+            if val>=costs[i]:
+                val-=costs[i]
+                if val>=0:
+                    k+=1
+        return k            
