@@ -1,0 +1,20 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        words=s.split()
+        t={}
+        l=[]
+        res=""
+        for word in words:
+            a=word[-1]
+            l.append(int(a))
+            mod_word=word[:-1]
+            t[int(a)]=mod_word
+        l.sort()
+        for i in range(len(l)):
+            res+=t[l[i]]+" "
+        return res.rstrip()
+          
+
+
+
+        
