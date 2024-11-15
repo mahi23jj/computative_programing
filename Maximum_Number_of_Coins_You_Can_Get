@@ -1,0 +1,14 @@
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        piles.sort(reverse=True)
+        l=len(piles)/3
+        x=0
+        for i in range(1,len(piles)):
+            if i%2!=0 and l>0:
+                x+=piles[i]
+                l-=1
+        return x        
+
+
+
+                                                                                                                                                                                                                                                                  
