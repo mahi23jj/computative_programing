@@ -1,0 +1,24 @@
+class Solution:
+    def isCovered(self, ranges: List[List[int]], left: int, right: int) -> bool:
+        val=[]
+        t=True
+        for i in range(left,right+1):
+            val.append(i)
+        for v in val:
+            for i in range(len(ranges)):
+                c=ranges[i][0]
+                d=ranges[i][1] 
+                if v<=d and v>=c:
+                    t=True
+                    break
+                else:
+                    t=False
+            if  t==False:
+                return False
+        return True        
+            
+                                          
+
+
+
+        
